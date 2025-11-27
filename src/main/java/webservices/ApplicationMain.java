@@ -1,8 +1,11 @@
 package webservices;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.ApplicationPath;
+import org.glassfish.jersey.server.ResourceConfig;
 
-@ApplicationPath("api")
-public class ApplicationMain extends Application {
+@ApplicationPath("/api")
+public class ApplicationMain extends ResourceConfig {
+    public ApplicationMain() {
+        packages("webservices");
+    }
 }
